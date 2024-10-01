@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            position: relative;
+        }
+
+        /* Background Color and Graphics */
+        .background-graphics {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0073e6, #80d4ff);
+            clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+        }
+
+        .circle {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .circle-small {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+        }
+
+        .circle-large {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 20%;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0073e6;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            height: 80px;
+        }
+
+        .submit-btn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Images of COEP College */
+        .coep-images {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<div class="background-graphics"></div>
+<div class="circle circle-small"></div>
+<div class="circle circle-large"></div>
+
+<div class="form-container">
+    <h2>Student Information Form</h2>
+    
+    <!-- COEP College Images -->
+    <div class="coep-images">
+        <img src="https://th.bing.com/th/id/OIP.eHmpDuM5tQFeh4ZMsiSxYAHaE7?rs=1&pid=ImgDetMain" alt="COEP College Image 1">
+        
+    </div>
+
+    <form action="/submit_student_info" method="POST">
+        <!-- Student Name -->
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- Roll Number -->
+        <div class="form-group">
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" name="rollNumber" required>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <!-- Course -->
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+        </div>
+
+        <!-- Year of Study -->
+        <div class="form-group">
+            <label for="year">Year of Study:</label>
+            <select id="year" name="year" required>
+                <option value="">Select</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="form-group">
+            <label for="hobbies">Hobbies/Interests:</label>
+            <input type="text" id="hobbies" name="hobbies">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
